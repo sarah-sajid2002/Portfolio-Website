@@ -19,5 +19,5 @@ const msgsSchema = new mongoose.Schema(
 );
 
 // Define and export the model
-const UserMessages = mongoose.model("userMessages", msgsSchema);
+const UserMessages = mongoose.model("usermessages", msgsSchema);
 module.exports = UserMessages;
