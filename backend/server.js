@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const UserMessages = require("./model/userMessages"); // Correct import
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 app.use(cors({ origin: "http://localhost:5173" })); // Adjust if your frontend runs on another port, like Vite's default 5173
 app.use(express.json());
 console.log("MongoDB URI:", process.env.MONGODB_URI); // Debugging
