@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const UserMessages = require("./model/userMessages"); // Correct import
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 4000;
 app.use(cors({ origin: "http://localhost:5173" })); // Adjust if your frontend runs on another port, like Vite's default 5173
 app.use(express.json());
 console.log("MongoDB URI:", process.env.MONGODB_URI); // Debugging
@@ -35,15 +35,6 @@ app.post("/post", async (req, res) => {
   }
 });
 
-// step 3 on heroku
-if (process.env.NODE_ENV == "production") {
-  app.use(express.static("frontend/build"));
-  const path = require("path");
-  app.get("*", (req, res) => {
-    res.sendFile;
-    path_resolve(__dirname, "frontend", "build", "index.html");
-  });
-}
 // Define routes and middleware
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
